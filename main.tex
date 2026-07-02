@@ -1,0 +1,51 @@
+% ============================================================================
+% Next-Day Readiness Forecasting in Elite Women's Football
+% Generic Overleaf-ready manuscript source
+% Compile with pdfLaTeX + Biber (or use latexmk).
+% Author details and correspondence e-mail have been populated. See docs/DOI_DEPOSIT_GUIDE.md before submission.
+% ============================================================================
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,doi=true,url=true,isbn=false]{biblatex}
+\addbibresource{references.bib}
+% Compatibility command used throughout the manuscript.
+\newcommand{\citep}{\parencite}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.12}
+
+% Useful project-wide macros
+\newcommand{\DeltaMAE}{\ensuremath{\Delta\mathrm{MAE}}}
+\newcommand{\Pzero}{\textit{P0}}
+\newcommand{\Pone}{\textit{P1}}
+\newcommand{\Ptwo}{\textit{P2}}
+
+\begin{document}
+
+\input{sections/00_title_abstract}
+\input{sections/01_introduction}
+\input{sections/02_methods}
+\input{sections/03_results}
+\input{sections/04_discussion}
+\input{sections/05_declarations}
+
+\printbibliography
+
+\end{document}

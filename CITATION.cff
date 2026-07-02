@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Next-day readiness forecasting code and reproducibility materials in elite women's football"
+message: "If you use this software or its reproducibility materials, please cite the archived Zenodo release."
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Cheng
+    given-names: Haoyang
+    affiliation: Wuhan Sport University
+    orcid: "https://orcid.org/0009-0009-4123-2610"
+keywords:
+  - athlete monitoring
+  - women's football
+  - readiness
+  - training load
+  - wellness
+  - forecasting

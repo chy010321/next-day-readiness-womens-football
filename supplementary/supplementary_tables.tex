@@ -1,0 +1,68 @@
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the primary comparison to the sequential residual-history window. Positive values indicate higher MAE for the full monitoring model (\Pone) than for the autoregressive baseline (\Pzero).}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrl}
+\toprule
+Evaluation setting & Residual window & Test pairs & Test players & \Pone$-$\Pzero MAE (95\% CI) \\
+\midrule
+Within Team A: 2020$\rightarrow$2021 & 14 & 5,881 & 27 & +0.020 (+0.001 to +0.042) \\
+Within Team A: 2020$\rightarrow$2021 & 28 & 5,881 & 27 & +0.016 ($-$0.001 to +0.036) \\
+Within Team A: 2020$\rightarrow$2021 & 56 & 5,881 & 27 & +0.012 ($-$0.006 to +0.032) \\
+Within Team B: 2020$\rightarrow$2021 & 14 & 2,483 & 23 & +0.060 (+0.014 to +0.111) \\
+Within Team B: 2020$\rightarrow$2021 & 28 & 2,483 & 23 & +0.056 (+0.009 to +0.102) \\
+Within Team B: 2020$\rightarrow$2021 & 56 & 2,483 & 23 & +0.050 (+0.005 to +0.105) \\
+Team A 2020$\rightarrow$Team B 2021 & 14 & 2,483 & 23 & +0.054 (+0.009 to +0.103) \\
+Team A 2020$\rightarrow$Team B 2021 & 28 & 2,483 & 23 & +0.047 (+0.005 to +0.099) \\
+Team A 2020$\rightarrow$Team B 2021 & 56 & 2,483 & 23 & +0.041 ($-$0.003 to +0.090) \\
+Team B 2020$\rightarrow$Team A 2021 & 14 & 5,881 & 27 & +0.028 (+0.008 to +0.047) \\
+Team B 2020$\rightarrow$Team A 2021 & 28 & 5,881 & 27 & +0.025 (+0.007 to +0.043) \\
+Team B 2020$\rightarrow$Team A 2021 & 56 & 5,881 & 27 & +0.020 (+0.003 to +0.038) \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Reduced-monitoring sensitivity analysis. \Ptwo{} included current readiness, daily load, fatigue, soreness, sleep duration, sleep quality, weekday, and month. Positive values indicate higher MAE for \Ptwo{} than for \Pzero.}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrl}
+\toprule
+Evaluation setting & Test pairs & Test players & \Ptwo$-$\Pzero MAE (95\% CI) \\
+\midrule
+Within Team A: 2020$\rightarrow$2021 & 5,881 & 27 & +0.019 (+0.002 to +0.038) \\
+Within Team B: 2020$\rightarrow$2021 & 2,483 & 23 & +0.055 (+0.009 to +0.100) \\
+Team A 2020$\rightarrow$Team B 2021 & 2,483 & 23 & +0.044 (+0.006 to +0.087) \\
+Team B 2020$\rightarrow$Team A 2021 & 5,881 & 27 & +0.025 (+0.008 to +0.042) \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Linear calibration-regression and performance diagnostics under the primary 28-observation residual-history window. The intercept and slope are from regressions of observed readiness on predicted readiness.}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+Evaluation setting & Model & MAE & RMSE & Bias & $R^2$ & Linear calibration intercept & Linear calibration slope & Test pairs \\
+\midrule
+Within Team A: 2020$\rightarrow$2021 & \Pzero & 0.722 & 1.044 & 0.008 & 0.557 & 0.703 & 0.893 & 5,881 \\
+Within Team A: 2020$\rightarrow$2021 & \Pone & 0.738 & 1.046 & 0.029 & 0.555 & 0.759 & 0.882 & 5,881 \\
+Within Team B: 2020$\rightarrow$2021 & \Pzero & 0.632 & 1.003 & 0.016 & 0.445 & 1.300 & 0.813 & 2,483 \\
+Within Team B: 2020$\rightarrow$2021 & \Pone & 0.688 & 0.997 & 0.022 & 0.452 & 1.324 & 0.809 & 2,483 \\
+Team A 2020$\rightarrow$Team B 2021 & \Pzero & 0.623 & 0.975 & 0.022 & 0.475 & 0.860 & 0.875 & 2,483 \\
+Team A 2020$\rightarrow$Team B 2021 & \Pone & 0.670 & 0.983 & 0.052 & 0.467 & 0.921 & 0.863 & 2,483 \\
+Team B 2020$\rightarrow$Team A 2021 & \Pzero & 0.734 & 1.072 & 0.005 & 0.532 & 1.019 & 0.847 & 5,881 \\
+Team B 2020$\rightarrow$Team A 2021 & \Pone & 0.759 & 1.076 & 0.014 & 0.529 & 1.063 & 0.839 & 5,881 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

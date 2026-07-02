@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Primary temporal and two-team transportability results using a 28-observation sequential residual-history window. Positive \DeltaMAE{} values indicate higher mean absolute error for \Pone. Cross-team results use sequential player-specific residual adaptation based only on earlier observed target-team readiness reports.}
+\label{tab:primary}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Evaluation setting & Test pairs & Test players & \Pzero MAE & \Pone MAE & \Pone$-$\Pzero MAE (95\% CI) & \Pzero RMSE & \Pone RMSE \\
+\midrule
+Within Team A: 2020$\rightarrow$2021 & 5,881 & 27 & 0.722 & 0.738 & +0.016 ($-$0.001 to +0.036) & 1.044 & 1.046 \\
+Within Team B: 2020$\rightarrow$2021 & 2,483 & 23 & 0.632 & 0.688 & +0.056 (+0.009 to +0.102) & 1.003 & 0.997 \\
+Team A 2020$\rightarrow$Team B 2021 & 2,483 & 23 & 0.623 & 0.670 & +0.047 (+0.005 to +0.099) & 0.975 & 0.983 \\
+Team B 2020$\rightarrow$Team A 2021 & 5,881 & 27 & 0.734 & 0.759 & +0.025 (+0.007 to +0.043) & 1.072 & 1.076 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
