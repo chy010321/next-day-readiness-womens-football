@@ -1,0 +1,34 @@
+# Original and derived data
+*.zip
+*.csv
+*.parquet
+data/
+raw_data/
+derived_data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Local operating system files
+.DS_Store
+Thumbs.db
