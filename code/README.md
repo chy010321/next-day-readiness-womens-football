@@ -7,7 +7,7 @@ python code/run_all.py --data-zip /path/to/subjective.zip --verify-source-hash
 ```
 
 - `check_source_hash.py`: optionally verifies the validated official source archive fingerprint.
-- `make_study_design_figure.py`: generates the canonical Figure 1 asset.
+- `make_study_design_figure.py`: generates the legacy compact schematic used for analytical-output checks. The manuscript Figure 1 is the static publication artwork `figures/liuchengtu.png`; see `docs/FIGURE1_ARTWORK_V1.1.2.md`.
 - `build_soccermon_nextday_dataset.py`: converts official SoccerMon subjective files into a player-day panel and primary 7-day-history cohort.
 - `final_analysis.py`: complete-pipeline chronological tuning, primary evaluation, Figure 2 eligibility flow, calibration curves, missingness summaries, and wellness-item-missingness sensitivity analysis.
 - `run_all.py`: one-command orchestrator.

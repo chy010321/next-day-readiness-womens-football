@@ -164,6 +164,32 @@ Additional pairs admitted by item-level wellness imputation & 49 & 0.1\% \\
 \end{flushleft}
 \end{table}
 
+
+
+\begin{table}[htbp]
+\centering
+\caption{Implementation and interpretation scope of the forecasting evaluation.}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{0.24\textwidth}p{0.38\textwidth}p{0.30\textwidth}}
+\toprule
+Element & Implemented approach & Interpretation boundary \\
+\midrule
+Prediction target & Self-reported readiness at calendar day $t+1$ on a 1--10 scale. & Not a performance, injury, or clinical outcome. \\
+Information timing & Candidate inputs available by the end of calendar day $t$; target aligned to the next calendar date for the same player. & The public data lack complete within-day timestamps; this is not a fully timestamp-verified real-time simulation. \\
+Population-model development & Source-team 2020 data only; model-specific expanding chronological tuning; source-only preprocessing. & No 2021 target outcome is used to select penalties. \\
+Sequential personalisation & Up to 28 earlier eligible target-period residuals for the same player; reset at target-period start. & Appropriate for ongoing monitoring; not a true new-player cold-start evaluation. \\
+Cross-team assessment & Population parameters transfer between teams, followed by target-team residual updating when earlier outcomes accrue. & Transportability assessment under sequential adaptation, not zero-shot external validation. \\
+Primary comparison & \Pone{} minus \Pzero{} MAE on the same 14,582 report-complete player-days. & Isolates added panel information beyond identical current-readiness and residual-history information. \\
+Uncertainty & 2,000 percentile player-cluster bootstrap resamples. & Quantifies uncertainty across players within the target team, not across teams. \\
+Missingness sensitivity & Wellness-item median imputation plus missingness indicators in 14,631 otherwise evaluable pairs. & Adds 49 pairs and does not model days with an absent daily readiness questionnaire. \\
+Calendar representation & Numeric weekday and month terms in linear/ridge models. & May not capture nonlinear or cyclical calendar effects. \\
+Prediction range & Continuous predictions; no rounding or truncation to 1--10. & A deployed system may require a prespecified range-handling rule. \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.80\textwidth]{figures/FigureS1_analytic_sample.pdf}

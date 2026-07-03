@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 title: "Next-day readiness forecasting code and reproducibility materials in elite women's football"
-message: "If you use this software or its reproducibility materials, please cite the archived Zenodo v1.1.1 release."
+message: "If you use this software or its reproducibility materials, please cite the archived Zenodo v1.1.2 Figure 1 artwork and reproducibility revision."
 type: software
-version: 1.1.1
+version: 1.1.2
 license: MIT
 authors:
   - family-names: Cheng

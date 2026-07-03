@@ -26,3 +26,13 @@ Version 1.1.1 is a correction and reproducibility-maintenance release for the ma
 - Updated README, CFF, Zenodo metadata, environment name, manifest, and release guidance.
 
 The original SoccerMon source data are not redistributed.
+
+
+## Full-text reporting revision
+
+- Clarified the calendar-day prediction time point and next-calendar-date target alignment.
+- Clarified common paired cohort eligibility, the limited scope of item-level wellness imputation, and the difference between retrospective eligibility counts and prospective deployment availability.
+- Clarified source-only preprocessing, model-specific chronological tuning, player-cluster bootstrap inference, continuous unbounded predictions, and the interpretation of calibration.
+- Strengthened the distinction between two-team transportability under sequential target-team adaptation and zero-shot external validation.
+- Added Supplementary Table S9 to document implementation choices and interpretation boundaries.
+- Added a multi-pass manuscript audit record and a Figure 1 requirements file. The workflow graphic itself is intentionally not redesigned until v1.1.2.

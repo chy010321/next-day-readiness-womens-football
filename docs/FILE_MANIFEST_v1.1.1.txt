@@ -1,6 +1,3 @@
-# v1.1.1 release-package manifest
-# Generated before archive creation; LaTeX build intermediates are intentionally excluded.
-
 .gitignore
 .latexmkrc
 .zenodo.json
@@ -21,8 +18,10 @@ code/verify_outputs.py
 data/README.md
 docs/AFTER_ZENODO_DOI_v1.1.1.md
 docs/AUDIT_AND_CORRECTIONS_v1.1.1.md
+docs/FIGURE1_REQUIREMENTS_FOR_V1.1.2.md
 docs/FILE_MANIFEST_v1.1.1.txt
 docs/GITHUB_RELEASE_BODY_v1.1.1.md
+docs/MULTIPASS_FULLTEXT_AUDIT_v1.1.1.md
 docs/PRESUBMISSION_CHECKLIST.md
 docs/RELEASE_NOTES_v1.1.1.md
 docs/RELEASE_V1.1.1_STEPS.md
@@ -40,7 +39,11 @@ figures/FigureS1_analytic_sample.pdf
 figures/FigureS2_missingness_aware_incremental_value.pdf
 figures/FigureS3_calibration_curves.pdf
 figures/FigureS4_player_level_incremental_error.pdf
+main.pdf
 main.tex
+manuscript_pdfs/README.md
+manuscript_pdfs/next_day_readiness_Haoyang_Cheng_v1.1.1_fulltext_revision_main.pdf
+manuscript_pdfs/next_day_readiness_Haoyang_Cheng_v1.1.1_fulltext_revision_supplementary.pdf
 outputs/README.md
 references.bib
 reproducibility/README.md
@@ -61,6 +64,7 @@ sections/02_methods.tex
 sections/03_results.tex
 sections/04_discussion.tex
 sections/05_declarations.tex
+supplementary.pdf
 supplementary.tex
 supplementary/supplementary_tables.tex
 tables/table1.tex

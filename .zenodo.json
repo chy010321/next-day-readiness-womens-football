@@ -1,8 +1,8 @@
 {
   "title": "Next-day readiness forecasting code and reproducibility materials in elite women's football",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "upload_type": "software",
-  "description": "Reproducible analysis code, manuscript source, figures, tables, and documentation for a secondary analysis of publicly available SoccerMon subjective-monitoring data. Version 1.1.1 corrects the implementation of the non-selected unpenalised candidate, aligns reporting terminology with the implemented readiness-reporting features, improves output verification, and resolves manuscript, table, figure, and metadata consistency issues. A clean rerun confirmed that the selected penalties and all reported primary and wellness-item-missingness sensitivity estimates are unchanged. The original SoccerMon dataset is not redistributed.",
+  "description": "Reproducible analysis code, manuscript source, figures, tables, and documentation for a secondary analysis of publicly available SoccerMon subjective-monitoring data. Version 1.1.2 replaces the manuscript Figure 1 artwork with a content-rich methodological pipeline that documents calendar-day target alignment, source-team-only model development, comparator-specific population predictions, model-specific past-only residual personalisation, temporal and two-team transportability evaluation, and incremental-value assessment. It does not introduce new numerical analysis or change audited primary and wellness-item-missingness sensitivity estimates. The original SoccerMon dataset is not redistributed.",
   "creators": [
     {
       "name": "Cheng, Haoyang",
