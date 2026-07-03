@@ -1,17 +1,17 @@
 \begin{table}[htbp]
 \centering
-\caption{Primary temporal and two-team transportability results using a 28-observation sequential residual-history window. Positive \DeltaMAE{} values indicate higher mean absolute error for \Pone. Cross-team results use sequential player-specific residual adaptation based only on earlier observed target-team readiness reports.}
+\caption{Primary temporal and two-team transportability results under the 28-observation sequential residual-history window. Regularisation was selected separately for each complete deployed comparator in source-team 2020 expanding-window validation. Positive $\Delta$MAE values indicate higher mean absolute error for \Pone. Cross-team results use sequential player-specific residual adaptation based only on earlier observed target-team readiness reports.}
 \label{tab:primary}
 \scriptsize
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrrrr}
 \toprule
-Evaluation setting & Test pairs & Test players & \Pzero MAE & \Pone MAE & \Pone$-$\Pzero MAE (95\% CI) & \Pzero RMSE & \Pone RMSE \\
+Evaluation setting & Test pairs & Test players & P0 MAE & P1 MAE & P1$-$P0 MAE (95\% CI) & P0 RMSE & P1 RMSE \\
 \midrule
-Within Team A: 2020$\rightarrow$2021 & 5,881 & 27 & 0.722 & 0.738 & +0.016 ($-$0.001 to +0.036) & 1.044 & 1.046 \\
-Within Team B: 2020$\rightarrow$2021 & 2,483 & 23 & 0.632 & 0.688 & +0.056 (+0.009 to +0.102) & 1.003 & 0.997 \\
-Team A 2020$\rightarrow$Team B 2021 & 2,483 & 23 & 0.623 & 0.670 & +0.047 (+0.005 to +0.099) & 0.975 & 0.983 \\
-Team B 2020$\rightarrow$Team A 2021 & 5,881 & 27 & 0.734 & 0.759 & +0.025 (+0.007 to +0.043) & 1.072 & 1.076 \\
+Within Team A: 2020$\rightarrow$2021 & 5,881 & 27 & 0.717 & 0.724 & +0.007 (-0.005 to +0.023) & 1.031 & 1.031 \\
+Within Team B: 2020$\rightarrow$2021 & 2,483 & 23 & 0.619 & 0.637 & +0.018 (-0.005 to +0.047) & 0.965 & 0.956 \\
+Team A 2020$\rightarrow$Team B 2021 & 2,483 & 23 & 0.618 & 0.640 & +0.022 (-0.005 to +0.053) & 0.962 & 0.969 \\
+Team B 2020$\rightarrow$Team A 2021 & 5,881 & 27 & 0.718 & 0.722 & +0.004 (-0.007 to +0.016) & 1.034 & 1.031 \\
 \bottomrule
 \end{tabular}%
 }

@@ -5,13 +5,13 @@
 \scriptsize
 \begin{threeparttable}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{p{0.19\textwidth}p{0.47\textwidth}p{0.24\textwidth}p{0.16\textwidth}}
+\begin{tabular}{p{0.21\textwidth}p{0.45\textwidth}p{0.24\textwidth}p{0.16\textwidth}}
 \toprule
 Model & Population prediction model & Sequential player adaptation & Role \\
 \midrule
-\Pzero: adaptive autoregressive baseline & Ridge model using current-day readiness only & Mean residual across the preceding 28 eligible forecast dates for the same player; cold start in the target 2021 period & Primary comparator \\
-\Pone: adaptive full-monitoring model & Ridge model using readiness; daily and 7-day load; training-day count; fatigue, mood, sleep duration, sleep quality, soreness, stress; weekday/month; reporting density & Same 28-observation residual adjustment as \Pzero & Primary intervention model \\
-\Ptwo: adaptive reduced-monitoring model & Ridge model using readiness; daily load; fatigue, soreness, sleep duration, sleep quality; weekday/month & Same 28-observation residual adjustment as \Pzero & Secondary parsimony sensitivity analysis \\
+\Pzero: adaptive readiness-history baseline & Ridge/linear model using current-day readiness only & Mean residual across the preceding 28 eligible forecast dates for the same player; cold start in the target 2021 period & Primary comparator \\
+\Pone: adaptive full-monitoring model & Ridge/linear model using readiness; daily and 7-day load; training-day count; fatigue, mood, sleep duration, sleep quality, soreness, stress; weekday/month; reporting density & Same 28-observation residual adjustment as \Pzero & Primary extended model \\
+\Ptwo: adaptive reduced-monitoring model & Ridge/linear model using readiness; daily load; fatigue, soreness, sleep duration, sleep quality; weekday/month & Same 28-observation residual adjustment as \Pzero & Secondary parsimony sensitivity analysis \\
 \bottomrule
 \end{tabular}%
 }

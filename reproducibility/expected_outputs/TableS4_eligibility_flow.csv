@@ -1,0 +1,7 @@
+Step,Overall player-days,Overall players,TeamA player-days,TeamA players,TeamB player-days,TeamB players
+Full calendar player-day panel,36550,50,19737,27,16813,23
+Observed next-day readiness,16997,50,11022,27,5975,23
+Observed current-day and next-day readiness,14631,50,9722,27,4909,23
+Plus available 7-day load history,14631,50,9722,27,4909,23
+Plus complete current-day wellness,14582,50,9693,27,4889,23
+Primary complete-case analytic cohort (7-day history),14582,50,9693,27,4889,23

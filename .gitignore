@@ -1,22 +1,21 @@
-# Original and derived data
+# Original source data (never commit)
+data/*
+!data/README.md
 *.zip
-*.csv
-*.parquet
-data/
-raw_data/
-derived_data/
+*.tar.gz
 
-# Python
-__pycache__/
-*.py[cod]
+# Locally generated analysis outputs
+outputs/*
+!outputs/README.md
+
+# Python environments and caches
 .venv/
 venv/
-env/
-
-# Jupyter
+__pycache__/
+*.py[cod]
 .ipynb_checkpoints/
 
-# LaTeX build files
+# LaTeX build products
 *.aux
 *.bbl
 *.bcf
@@ -29,6 +28,6 @@ env/
 *.synctex.gz
 *.toc
 
-# Local operating system files
+# OS files
 .DS_Store
 Thumbs.db

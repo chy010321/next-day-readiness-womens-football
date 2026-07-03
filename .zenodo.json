@@ -1,14 +1,17 @@
 {
   "title": "Next-day readiness forecasting code and reproducibility materials in elite women's football",
-  "version": "1.0.1",
-  "description": "Code, manuscript source, tables, figures, and reproducibility materials for a secondary analysis of the SoccerMon dataset. The project evaluates whether daily workload and wellness monitoring adds incremental value beyond a personalised autoregressive baseline for next-day readiness forecasting in elite women's football. The original SoccerMon data are not redistributed in this repository.",
+  "version": "1.1.0",
+  "upload_type": "software",
+  "description": "Reproducible analysis code, manuscript source, figures, tables, and documentation for a secondary analysis of publicly available SoccerMon subjective-monitoring data. This release refines the analytic cohort to match the 7-day workload history used by the primary model, tunes the complete deployed pipeline with chronological source-team folds, adds calibration curves, and updates missingness and transportability reporting. The original SoccerMon dataset is not redistributed.",
   "creators": [
     {
       "name": "Cheng, Haoyang",
+      "orcid": "0009-0009-4123-2610",
       "affiliation": "Wuhan Sport University",
-      "orcid": "0009-0009-4123-2610"
+      "type": "ProjectMember"
     }
   ],
+  "access_right": "open",
   "license": "MIT",
   "keywords": [
     "athlete monitoring",
@@ -17,13 +20,13 @@
     "training load",
     "wellness",
     "forecasting",
-    "sports science"
+    "reproducibility"
   ],
   "related_identifiers": [
     {
-      "identifier": "10.5281/zenodo.10033832",
+      "identifier": "https://doi.org/10.5281/zenodo.10033832",
       "relation": "isDerivedFrom",
-      "scheme": "doi"
+      "resource_type": "dataset"
     }
   ]
 }

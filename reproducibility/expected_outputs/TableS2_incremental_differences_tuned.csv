@@ -1,0 +1,17 @@
+scenario,scenario_slug,comparison,source_team,target_team,residual_window_observations,alpha_P0,alpha_P1,MAE_difference,CI_low,CI_high,bootstrap_resamples,alpha_P2
+Within Team A: 2020→2021,Within_TeamA_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamA,14,1000.0,1000.0,0.009711762018574488,-0.0034927449927892205,0.027034618925622946,2000,
+Within Team A: 2020→2021,Within_TeamA_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamA,28,1000.0,1000.0,0.007183142036409573,-0.004901143401399188,0.02275497913143212,2000,
+Within Team A: 2020→2021,Within_TeamA_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamA,56,1000.0,1000.0,0.004389868580600975,-0.007490213198571821,0.019500580452056306,2000,
+Within Team A: 2020→2021,Within_TeamA_2020_to_2021,P2 reduced monitoring − P0 readiness-history baseline,TeamA,TeamA,28,1000.0,,0.011080813975152815,-0.001892225980259779,0.027150403510024356,2000,1000.0
+Within Team B: 2020→2021,Within_TeamB_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamB,14,1000.0,1000.0,0.020889519833898085,-0.002956587634774416,0.04863630670485348,2000,
+Within Team B: 2020→2021,Within_TeamB_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamB,28,1000.0,1000.0,0.01816820134603514,-0.0050653985427809274,0.046598347897311126,2000,
+Within Team B: 2020→2021,Within_TeamB_2020_to_2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamB,56,1000.0,1000.0,0.013932587254027351,-0.01112284210169138,0.04315854068489115,2000,
+Within Team B: 2020→2021,Within_TeamB_2020_to_2021,P2 reduced monitoring − P0 readiness-history baseline,TeamB,TeamB,28,1000.0,,0.017114253909568666,-0.006001116716054458,0.04400871491018081,2000,1000.0
+Cross-team: Team A 2020→Team B 2021,Cross_TeamA2020_to_TeamB2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamB,14,1000.0,1000.0,0.02763013648643242,0.0007732403904431862,0.06031423508078766,2000,
+Cross-team: Team A 2020→Team B 2021,Cross_TeamA2020_to_TeamB2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamB,28,1000.0,1000.0,0.02222642627679916,-0.004695186291728273,0.0534171284044691,2000,
+Cross-team: Team A 2020→Team B 2021,Cross_TeamA2020_to_TeamB2021,P1 full monitoring − P0 readiness-history baseline,TeamA,TeamB,56,1000.0,1000.0,0.01712330770812376,-0.011861601626501486,0.051721897523335364,2000,
+Cross-team: Team A 2020→Team B 2021,Cross_TeamA2020_to_TeamB2021,P2 reduced monitoring − P0 readiness-history baseline,TeamA,TeamB,28,1000.0,,0.02324130442309602,-0.0008076203245690222,0.051912921153078044,2000,1000.0
+Cross-team: Team B 2020→Team A 2021,Cross_TeamB2020_to_TeamA2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamA,14,1000.0,1000.0,0.004088014340173474,-0.006937735770391496,0.017027601210348506,2000,
+Cross-team: Team B 2020→Team A 2021,Cross_TeamB2020_to_TeamA2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamA,28,1000.0,1000.0,0.0038030983683523534,-0.006945375178828259,0.015698928965144517,2000,
+Cross-team: Team B 2020→Team A 2021,Cross_TeamB2020_to_TeamA2021,P1 full monitoring − P0 readiness-history baseline,TeamB,TeamA,56,1000.0,1000.0,-9.072625252670719e-05,-0.008987394289000855,0.009835488320274857,2000,
+Cross-team: Team B 2020→Team A 2021,Cross_TeamB2020_to_TeamA2021,P2 reduced monitoring − P0 readiness-history baseline,TeamB,TeamA,28,1000.0,,0.0023309477229490616,-0.006934992940421986,0.012805161172803616,2000,1000.0

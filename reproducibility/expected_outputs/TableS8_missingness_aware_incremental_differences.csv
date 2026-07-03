@@ -1,0 +1,5 @@
+scenario,scenario_slug,comparison,source_team,target_team,residual_window_observations,alpha_P0,alpha_P1m,MAE_difference,CI_low,CI_high,bootstrap_resamples
+Within Team A: 2020→2021,Within_TeamA_2020_to_2021,P1m imputed full monitoring + missingness indicators − P0 readiness-history baseline,TeamA,TeamA,28,1000.0,1000.0,0.007915116770646713,-0.0038655103992718902,0.024641808795121102,2000
+Within Team B: 2020→2021,Within_TeamB_2020_to_2021,P1m imputed full monitoring + missingness indicators − P0 readiness-history baseline,TeamB,TeamB,28,1000.0,1000.0,0.019549924183478118,-0.005578125309858584,0.04890459743544675,2000
+Cross-team: Team A 2020→Team B 2021,Cross_TeamA2020_to_TeamB2021,P1m imputed full monitoring + missingness indicators − P0 readiness-history baseline,TeamA,TeamB,28,1000.0,1000.0,0.023855018706809505,-0.0032507918352084526,0.058848219879050326,2000
+Cross-team: Team B 2020→Team A 2021,Cross_TeamB2020_to_TeamA2021,P1m imputed full monitoring + missingness indicators − P0 readiness-history baseline,TeamB,TeamA,28,1000.0,1000.0,0.00407600593775892,-0.006498838998706774,0.016150889531612905,2000
