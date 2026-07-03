@@ -96,9 +96,9 @@ def main() -> None:
                 lambda values: values.rolling(window, min_periods=window).sum()
             )
 
-    panel["wellness_reported"] = panel["readiness"].notna().astype(int)
+    panel["readiness_reported"] = panel["readiness"].notna().astype(int)
     for window in (3, 7):
-        panel[f"wellness_report_rate_{window}d"] = panel.groupby("player_id")["wellness_reported"].transform(
+        panel[f"readiness_report_rate_{window}d"] = panel.groupby("player_id")["readiness_reported"].transform(
             lambda values: values.rolling(window, min_periods=window).mean()
         )
 
@@ -128,8 +128,8 @@ def main() -> None:
         "load_sum_7d", "load_mean_7d", "training_days_7d",
         "load_sum_14d", "load_mean_14d", "training_days_14d",
         "load_sum_28d", "load_mean_28d", "fatigue", "mood", "sleep_duration",
-        "sleep_quality", "soreness", "stress", "wellness_report_rate_3d",
-        "wellness_report_rate_7d", "prior_readiness_reports", "wellness_complete_t",
+        "sleep_quality", "soreness", "stress", "readiness_report_rate_3d",
+        "readiness_report_rate_7d", "prior_readiness_reports", "wellness_complete_t",
         "analysis_eligible_primary",
     ]
     full_panel = panel.loc[:, columns].copy()

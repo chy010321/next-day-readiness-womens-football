@@ -1,15 +1,14 @@
-# Data directory
+# Source data
 
-Do **not** place original SoccerMon files under version control.
+The original SoccerMon `subjective.zip` archive is not redistributed in this repository.
 
-Download the official `subjective.zip` archive separately from the SoccerMon Zenodo record:
+Download it from <https://doi.org/10.5281/zenodo.10033832> and place it anywhere on your local machine. Pass its path to `code/run_all.py`.
 
-- https://doi.org/10.5281/zenodo.10033832
+## Validated archive fingerprint
 
-Pass its local path to the reproduction runner:
+The v1.1.1 audit used the official archive with:
 
-```bash
-python code/run_all.py --data-zip /path/to/subjective.zip
-```
+- MD5: `a3e86aeca611f77c9331a535eae00bf7`
+- SHA-256: `338e9878fbed1f941cfc37b3f012cb356f97cc0f726e80a79aa5c8e67cc2a87c`
 
-The original data are not redistributed in this repository.
+Use `--verify-source-hash` during reproduction to require this exact source archive.

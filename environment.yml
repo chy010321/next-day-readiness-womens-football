@@ -1,4 +1,4 @@
-name: soccermon-readiness-v1-1-0
+name: soccermon-readiness-v1-1-1
 channels:
   - conda-forge
 dependencies:

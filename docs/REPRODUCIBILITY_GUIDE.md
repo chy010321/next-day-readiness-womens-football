@@ -1,49 +1,25 @@
 # Reproducibility guide
 
-## Scope
-
-This release reproduces the final analyses using the original SoccerMon `subjective.zip` archive. The original archive is not included because it is governed by the source dataset's licence and attribution requirements.
-
-## Required local inputs
+## Requirements
 
 - Python 3.11
-- The official SoccerMon `subjective.zip` archive downloaded separately from https://doi.org/10.5281/zenodo.10033832
+- The official SoccerMon `subjective.zip` archive
+- Packages listed in `requirements.txt`
 
-## Install and run
-
-Use either `requirements.txt` with a virtual environment or `environment.yml` with conda. Then run:
+## Full reproduction
 
 ```bash
-python code/run_all.py --data-zip /path/to/subjective.zip
+python code/run_all.py --data-zip /path/to/subjective.zip --verify-source-hash
 ```
 
 The command:
 
-1. builds the full athlete-day panel and the primary 7-day-history complete-case cohort;
-2. runs full-pipeline chronological tuning, primary evaluation, flow/missingness reporting, calibration figures, and missingness-aware sensitivity analysis;
-3. compares generated summary results to `reproducibility/expected_outputs/`.
+1. checks the source archive fingerprint when requested;
+2. generates the canonical Figure 1;
+3. builds the player-day calendar panel and primary paired complete-case cohort;
+4. tunes P0, P1, P2, and P1m using expanding source-team 2020 folds;
+5. evaluates 2021 within-team and bidirectional cross-team settings using past-only residual updates;
+6. generates non-identifying tables/figures; and
+7. verifies aggregate reference outputs when 2,000 bootstrap resamples are used.
 
-## Expected runtime
-
-A full analysis uses 2,000 player-cluster bootstrap resamples and may require several minutes depending on hardware. The command uses a fixed random seed and should reproduce the archived summary values to numerical tolerance.
-
-## Generated files
-
-The default output directory is `outputs/`:
-
-```text
-outputs/
-├── phase1/
-│   ├── soccermon_next_day_readiness_full_panel.csv
-│   └── soccermon_next_day_readiness_primary_pairs.csv
-└── analysis/
-    ├── Table3_primary_tuned_performance.csv
-    ├── TableS1_inner_time_tuning_summary_primary.csv
-    ├── TableS2_incremental_differences_tuned.csv
-    ├── TableS7_missingness_aware_performance.csv
-    ├── TableS8_missingness_aware_incremental_differences.csv
-    ├── figures/
-    └── supplementary/
-```
-
-The generated files remain local and are ignored by Git.
+The original data and individual prediction files are not committed. Locally generated output is written beneath `outputs/` and ignored by Git.

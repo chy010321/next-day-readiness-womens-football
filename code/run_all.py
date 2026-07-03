@@ -25,6 +25,8 @@ def main() -> None:
                         help="Use 2000 to reproduce manuscript inference exactly.")
     parser.add_argument("--skip-verification", action="store_true",
                         help="Skip numerical comparison against bundled expected summary outputs.")
+    parser.add_argument("--verify-source-hash", action="store_true",
+                        help="Require the official SoccerMon subjective.zip fingerprint validated for v1.1.1.")
     args = parser.parse_args()
 
     data_zip = args.data_zip.expanduser().resolve()
@@ -32,7 +34,16 @@ def main() -> None:
     phase1_dir = work_dir / "phase1"
     analysis_dir = work_dir / "analysis"
 
+    if args.verify_source_hash:
+        command = [sys.executable, str(CODE_DIR / "check_source_hash.py"), "--data-zip", str(data_zip)]
+        print("Running:", " ".join(command))
+        subprocess.run(command, check=True)
+
     commands = [
+        [sys.executable, str(CODE_DIR / "make_study_design_figure.py"),
+         "--output-dir", str(analysis_dir / "figures")],
+        [sys.executable, str(CODE_DIR / "make_eligibility_flow_figure.py"),
+         "--output-dir", str(analysis_dir / "figures")],
         [sys.executable, str(CODE_DIR / "build_soccermon_nextday_dataset.py"),
          "--zip", str(data_zip), "--output-dir", str(phase1_dir)],
         [sys.executable, str(CODE_DIR / "final_analysis.py"),

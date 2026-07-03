@@ -1,19 +1,17 @@
 \begin{table}[htbp]
 \centering
-\caption{Forecasting model specifications.}
+\caption{Forecasting model specifications. The 7-day load and training-day features refer to the interval ending on day $t$ (day $t$ plus the preceding six calendar days).}
 \label{tab:models}
-\scriptsize
-\begin{threeparttable}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{p{0.21\textwidth}p{0.45\textwidth}p{0.24\textwidth}p{0.16\textwidth}}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X p{0.25\textwidth}@{}}
 \toprule
-Model & Population prediction model & Sequential player adaptation & Role \\
+Model & Population-model inputs & Sequential adaptation and role \\
 \midrule
-\Pzero: adaptive readiness-history baseline & Ridge/linear model using current-day readiness only & Mean residual across the preceding 28 eligible forecast dates for the same player; cold start in the target 2021 period & Primary comparator \\
-\Pone: adaptive full-monitoring model & Ridge/linear model using readiness; daily and 7-day load; training-day count; fatigue, mood, sleep duration, sleep quality, soreness, stress; weekday/month; reporting density & Same 28-observation residual adjustment as \Pzero & Primary extended model \\
-\Ptwo: adaptive reduced-monitoring model & Ridge/linear model using readiness; daily load; fatigue, soreness, sleep duration, sleep quality; weekday/month & Same 28-observation residual adjustment as \Pzero & Secondary parsimony sensitivity analysis \\
+\Pzero: personalised readiness-history baseline & Current-day readiness only. & Mean residual across up to 28 earlier eligible forecast dates for the same player; reset cold start in target 2021. Primary comparator. \\
+\addlinespace
+\Pone: personalised full-monitoring model & Current-day readiness; daily load; 7-day mean load; training-day count; fatigue, mood, sleep duration, sleep quality, soreness, stress; numeric weekday/month; and 3-/7-day readiness-reporting rates. & Same 28-observation residual adjustment as \Pzero. Primary extended model. \\
+\addlinespace
+\Ptwo: personalised reduced-monitoring model & Current-day readiness; daily load; fatigue, soreness, sleep duration, sleep quality; and numeric weekday/month. & Same 28-observation residual adjustment as \Pzero. Secondary parsimony sensitivity analysis. \\
 \bottomrule
-\end{tabular}%
-}
-\end{threeparttable}
+\end{tabularx}
 \end{table}

@@ -21,29 +21,30 @@ Team B & P2 & 1000 & 0.577 & 1,064 \\
 
 \begin{table}[htbp]
 \centering
-\caption{Residual-window and reduced-monitoring sensitivity analyses. Positive values indicate higher MAE for the candidate model than for the readiness-history baseline.}
+\caption{Residual-window and reduced-monitoring sensitivity analyses. Positive values indicate higher MAE for the candidate model than for the personalised readiness-history baseline.}
 \scriptsize
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrl}
+\begin{tabular}{llrrl}
 \toprule
-Evaluation setting & Residual window & Test pairs & Candidate$-$\Pzero{} MAE (95\% CI) \\
+Candidate model & Evaluation setting & Residual window & Test pairs & Candidate$-$\Pzero{} MAE (95\% CI) \\
 \midrule
-Within Team A: 2020$\rightarrow$2021 & 14 & 5,881 & +0.010 (-0.003 to +0.027) \\
-Within Team A: 2020$\rightarrow$2021 & 28 & 5,881 & +0.007 (-0.005 to +0.023) \\
-Within Team A: 2020$\rightarrow$2021 & 56 & 5,881 & +0.004 (-0.007 to +0.020) \\
-Within Team B: 2020$\rightarrow$2021 & 14 & 2,483 & +0.021 (-0.003 to +0.049) \\
-Within Team B: 2020$\rightarrow$2021 & 28 & 2,483 & +0.018 (-0.005 to +0.047) \\
-Within Team B: 2020$\rightarrow$2021 & 56 & 2,483 & +0.014 (-0.011 to +0.043) \\
-Team A 2020$\rightarrow$Team B 2021 & 14 & 2,483 & +0.028 (+0.001 to +0.060) \\
-Team A 2020$\rightarrow$Team B 2021 & 28 & 2,483 & +0.022 (-0.005 to +0.053) \\
-Team A 2020$\rightarrow$Team B 2021 & 56 & 2,483 & +0.017 (-0.012 to +0.052) \\
-Team B 2020$\rightarrow$Team A 2021 & 14 & 5,881 & +0.004 (-0.007 to +0.017) \\
-Team B 2020$\rightarrow$Team A 2021 & 28 & 5,881 & +0.004 (-0.007 to +0.016) \\
-Team B 2020$\rightarrow$Team A 2021 & 56 & 5,881 & -0.000 (-0.009 to +0.010) \\
-Within Team A: 2020$\rightarrow$2021 & 28 (P2) & 5,881 & +0.011 (-0.002 to +0.027) \\
-Within Team B: 2020$\rightarrow$2021 & 28 (P2) & 2,483 & +0.017 (-0.006 to +0.044) \\
-Team A 2020$\rightarrow$Team B 2021 & 28 (P2) & 2,483 & +0.023 (-0.001 to +0.052) \\
-Team B 2020$\rightarrow$Team A 2021 & 28 (P2) & 5,881 & +0.002 (-0.007 to +0.013) \\
+P1 full monitoring & Within Team A: 2020$\rightarrow$2021 & 14 & 5,881 & +0.010 (-0.003 to +0.027) \\
+P1 full monitoring & Within Team A: 2020$\rightarrow$2021 & 28 & 5,881 & +0.007 (-0.005 to +0.023) \\
+P1 full monitoring & Within Team A: 2020$\rightarrow$2021 & 56 & 5,881 & +0.004 (-0.007 to +0.020) \\
+P1 full monitoring & Within Team B: 2020$\rightarrow$2021 & 14 & 2,483 & +0.021 (-0.003 to +0.049) \\
+P1 full monitoring & Within Team B: 2020$\rightarrow$2021 & 28 & 2,483 & +0.018 (-0.005 to +0.047) \\
+P1 full monitoring & Within Team B: 2020$\rightarrow$2021 & 56 & 2,483 & +0.014 (-0.011 to +0.043) \\
+P1 full monitoring & Team A 2020$\rightarrow$Team B 2021 & 14 & 2,483 & +0.028 (+0.001 to +0.060) \\
+P1 full monitoring & Team A 2020$\rightarrow$Team B 2021 & 28 & 2,483 & +0.022 (-0.005 to +0.053) \\
+P1 full monitoring & Team A 2020$\rightarrow$Team B 2021 & 56 & 2,483 & +0.017 (-0.012 to +0.052) \\
+P1 full monitoring & Team B 2020$\rightarrow$Team A 2021 & 14 & 5,881 & +0.004 (-0.007 to +0.017) \\
+P1 full monitoring & Team B 2020$\rightarrow$Team A 2021 & 28 & 5,881 & +0.004 (-0.007 to +0.016) \\
+P1 full monitoring & Team B 2020$\rightarrow$Team A 2021 & 56 & 5,881 & -0.000 (-0.009 to +0.010) \\
+\addlinespace
+P2 reduced monitoring & Within Team A: 2020$\rightarrow$2021 & 28 & 5,881 & +0.011 (-0.002 to +0.027) \\
+P2 reduced monitoring & Within Team B: 2020$\rightarrow$2021 & 28 & 2,483 & +0.017 (-0.006 to +0.044) \\
+P2 reduced monitoring & Team A 2020$\rightarrow$Team B 2021 & 28 & 2,483 & +0.023 (-0.001 to +0.052) \\
+P2 reduced monitoring & Team B 2020$\rightarrow$Team A 2021 & 28 & 5,881 & +0.002 (-0.007 to +0.013) \\
 \bottomrule
 \end{tabular}%
 }
@@ -73,7 +74,7 @@ Team B 2020$\rightarrow$Team A 2021 & \Pone & 1000 & 0.722 & 1.031 & 0.017 & 0.5
 
 \begin{table}[htbp]
 \centering
-\caption{Player-day eligibility flow from the complete calendar panel to the primary complete-case analytic cohort.}
+\caption{Player-day eligibility flow from the complete calendar panel to the primary paired complete-case analytic cohort. All player-days with observed current- and next-day readiness already had the required 7-day load history because the daily-load calendar panel was continuous.}
 \scriptsize
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrrr}
@@ -82,10 +83,8 @@ Step & Overall player-days & Overall players & Team A player-days & Team A playe
 \midrule
 Full calendar player-day panel & 36,550 & 50 & 19,737 & 27 & 16,813 & 23 \\
 Observed next-day readiness & 16,997 & 50 & 11,022 & 27 & 5,975 & 23 \\
-Observed current-day and next-day readiness & 14,631 & 50 & 9,722 & 27 & 4,909 & 23 \\
-Plus available 7-day load history & 14,631 & 50 & 9,722 & 27 & 4,909 & 23 \\
-Plus complete current-day wellness & 14,582 & 50 & 9,693 & 27 & 4,889 & 23 \\
-Primary complete-case analytic cohort (7-day history) & 14,582 & 50 & 9,693 & 27 & 4,889 & 23 \\
+Observed current- and next-day readiness plus 7-day load history & 14,631 & 50 & 9,722 & 27 & 4,909 & 23 \\
+Plus complete current-day readiness and wellness profile & 14,582 & 50 & 9,693 & 27 & 4,889 & 23 \\
 \bottomrule
 \end{tabular}%
 }
@@ -93,17 +92,17 @@ Primary complete-case analytic cohort (7-day history) & 14,582 & 50 & 9,693 & 27
 
 \begin{table}[htbp]
 \centering
-\caption{Missingness of current-day readiness and wellness variables in the calendar player-day panel, by team and year. Values are percentages of player-days with missing values.}
+\caption{Missingness of current-day readiness/wellness variables and next-day readiness in the calendar player-day panel, by team and year. Values are percentages of player-days with missing values.}
 \scriptsize
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Team-year & Readiness & Fatigue & Mood & Sleep duration & Sleep quality & Soreness & Stress \\
+Team-year & Current-day readiness & Fatigue & Mood & Sleep duration & Sleep quality & Soreness & Stress & Next-day readiness \\
 \midrule
-Team A, 2020 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 \\
-Team A, 2021 & 32.1 & 32.1 & 32.1 & 32.2 & 32.1 & 32.1 & 32.1 \\
-Team B, 2020 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 \\
-Team B, 2021 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 \\
+Team A, 2020 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 & 56.2 & 56.1 \\
+Team A, 2021 & 32.1 & 32.1 & 32.1 & 32.2 & 32.1 & 32.1 & 32.1 & 32.1 \\
+Team B, 2020 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 & 67.3 \\
+Team B, 2021 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 \\
 \bottomrule
 \end{tabular}%
 }
@@ -111,7 +110,7 @@ Team B, 2021 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 & 61.6 \\
 
 \begin{table}[htbp]
 \centering
-\caption{Missingness-aware full-pipeline tuning in source-team 2020 data. The full model used source-training median imputation and wellness-specific missingness indicators.}
+\caption{Wellness-item-missingness sensitivity-model tuning in source-team 2020 data. The full model used source-training median imputation and wellness-specific missingness indicators.}
 \scriptsize
 \begin{tabular}{llrrr}
 \toprule
@@ -127,7 +126,7 @@ Team B & P1m & 1000 & 0.575 & 1,065 \\
 
 \begin{table}[htbp]
 \centering
-\caption{Missingness-aware sensitivity analysis in the broader cohort with observed current and next-day readiness and 7-day load history. Positive values indicate higher MAE for the imputed full model (P1m) than for the readiness-history baseline.}
+\caption{Wellness-item-missingness sensitivity analysis conditional on observed current- and next-day readiness and 7-day load history. Positive values indicate higher MAE for the imputed full model (P1m) than for the personalised readiness-history baseline. This analysis does not address days on which the daily readiness questionnaire was not completed.}
 \scriptsize
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
@@ -143,10 +142,27 @@ Team B 2020$\rightarrow$Team A 2021 & 5,903 & 0.716 & 0.720 & +0.004 (-0.006 to 
 }
 \end{table}
 
-
-
-
-
+\begin{table}[htbp]
+\centering
+\caption{Evaluation eligibility and the scope of the wellness-item-missingness sensitivity analysis. Counts are retrospective because they condition on subsequently observed next-day readiness; they should not be interpreted as prospective deployment-availability rates.}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+Evaluation subset & Player-day pairs & Percentage of full calendar panel \\
+\midrule
+Full calendar player-day panel & 36,550 & 100.0\% \\
+Observed next-day readiness & 16,997 & 46.5\% \\
+Observed current- and next-day readiness plus 7-day load history & 14,631 & 40.0\% \\
+Primary paired complete-case cohort (plus complete current-day readiness/wellness profile) & 14,582 & 39.9\% \\
+Additional pairs admitted by item-level wellness imputation & 49 & 0.1\% \\
+\bottomrule
+\end{tabular}%
+}
+\begin{flushleft}\footnotesize
+\textit{Note:} The 49 additional pairs equal 0.3\% of the 14,631-pair conditional cohort. The primary P0--P1 comparison uses the same 14,582 report-complete player-days to avoid changing the evaluation set between models.
+\end{flushleft}
+\end{table}
 
 \begin{figure}[htbp]
 \centering
@@ -157,7 +173,7 @@ Team B 2020$\rightarrow$Team A 2021 & 5,903 & 0.716 & 0.720 & +0.004 (-0.006 to 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/FigureS2_missingness_aware_incremental_value.pdf}
-\caption{Missingness-aware sensitivity analysis in the broader analytic cohort. The full model used source-training median imputation and wellness-specific missingness indicators. Positive values indicate higher MAE than the readiness-history baseline.}
+\caption{Wellness-item-missingness sensitivity analysis conditional on observed current- and next-day readiness. The full model used source-training median imputation and wellness-specific missingness indicators. Positive values indicate higher MAE than the personalised readiness-history baseline.}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -169,5 +185,5 @@ Team B 2020$\rightarrow$Team A 2021 & 5,903 & 0.716 & 0.720 & +0.004 (-0.006 to 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/FigureS4_player_level_incremental_error.pdf}
-\caption{Player-level heterogeneity in full-monitoring incremental MAE. Each point is one player. Positive values indicate higher MAE for \Pone than for \Pzero. Boxplots summarize player-level distributions within each evaluation setting.}
+\caption{Player-level heterogeneity in full-monitoring incremental MAE. Each point is one player. Positive values indicate higher MAE for \Pone than for \Pzero. Boxplots summarize player-level distributions within each evaluation setting; this descriptive plot does not identify stable player-level treatment or causal effects.}
 \end{figure}

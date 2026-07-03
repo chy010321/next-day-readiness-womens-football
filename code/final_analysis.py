@@ -15,11 +15,13 @@ from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
+matplotlib.rcParams["pdf.fonttype"] = 42
+matplotlib.rcParams["ps.fonttype"] = 42
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -39,7 +41,7 @@ SCENARIOS = [
 PRIMARY_FEATURES = {
     "P0": ["readiness"],
     "P1": ["readiness", "daily_load", "load_mean_7d", "training_days_7d"]
-          + WELLNESS + ["wellness_report_rate_3d", "wellness_report_rate_7d"] + CALENDAR,
+          + WELLNESS + ["readiness_report_rate_3d", "readiness_report_rate_7d"] + CALENDAR,
     "P2": ["readiness", "daily_load", "fatigue", "soreness", "sleep_duration", "sleep_quality"]
           + CALENDAR,
 }
@@ -47,7 +49,7 @@ MISSINGNESS_FEATURES = {
     "P0": ["readiness"],
     "P1m": ["readiness", "daily_load", "load_mean_7d", "training_days_7d"]
            + WELLNESS + [f"{name}_missing" for name in WELLNESS]
-           + ["wellness_report_rate_3d", "wellness_report_rate_7d"] + CALENDAR,
+           + ["readiness_report_rate_3d", "readiness_report_rate_7d"] + CALENDAR,
 }
 
 
@@ -74,7 +76,7 @@ def fit_predict(train: pd.DataFrame, test: pd.DataFrame, features: list[str], al
     model = Pipeline([
         ("impute", SimpleImputer(strategy="median")),
         ("scale", StandardScaler()),
-        ("ridge", Ridge(alpha=float(alpha))),
+        ("model", LinearRegression() if float(alpha) == 0.0 else Ridge(alpha=float(alpha))),
     ])
     model.fit(transform(train, features), train["readiness_t1"].astype(float))
     return model.predict(transform(test, features))
@@ -246,10 +248,8 @@ def write_flow_and_missingness(full: pd.DataFrame, supplementary: Path) -> None:
     criteria = [
         ("Full calendar player-day panel", pd.Series(True, index=full.index)),
         ("Observed next-day readiness", full["readiness_t1"].notna()),
-        ("Observed current-day and next-day readiness", full["readiness"].notna() & full["readiness_t1"].notna()),
-        ("Plus available 7-day load history", full["readiness"].notna() & full["readiness_t1"].notna() & full["load_mean_7d"].notna() & full["training_days_7d"].notna()),
-        ("Plus complete current-day wellness", full["readiness_t1"].notna() & full["wellness_complete_t"].eq(1) & full["load_mean_7d"].notna() & full["training_days_7d"].notna()),
-        ("Primary complete-case analytic cohort (7-day history)", full["analysis_eligible_primary"].eq(1)),
+        ("Observed current- and next-day readiness plus 7-day load history", full["readiness"].notna() & full["readiness_t1"].notna() & full["load_mean_7d"].notna() & full["training_days_7d"].notna()),
+        ("Plus complete current-day readiness and wellness profile", full["analysis_eligible_primary"].eq(1)),
     ]
     flow_rows = []
     for step, mask in criteria:
@@ -324,10 +324,10 @@ def plot_flow(flow: pd.DataFrame, figure_dir: Path) -> None:
         )
     for upper, lower in zip(positions[:-1], positions[1:]):
         axis.annotate("", xy=(0.5, lower + 0.05), xytext=(0.5, upper - 0.05), arrowprops={"arrowstyle": "->"})
-    axis.set_title("Flow of player-days into the primary complete-case cohort", pad=20)
+    axis.set_title("Flow of player-days into the primary paired complete-case cohort", pad=20)
     figure.tight_layout()
-    figure.savefig(figure_dir / "FigureS1_eligibility_flow.pdf", bbox_inches="tight")
-    figure.savefig(figure_dir / "FigureS1_eligibility_flow.png", dpi=300, bbox_inches="tight")
+    figure.savefig(figure_dir / "Figure2_eligibility_flow.pdf", bbox_inches="tight")
+    figure.savefig(figure_dir / "Figure2_eligibility_flow.png", dpi=300, bbox_inches="tight")
     plt.close(figure)
 
 
@@ -347,8 +347,8 @@ def plot_missingness_incremental(differences: pd.DataFrame, figure_dir: Path) ->
                   va="center", fontsize=9)
     axis.set_yticks(positions)
     axis.set_yticklabels(selected["scenario"])
-    axis.set_xlabel("MAE difference: missingness-aware full model − readiness-history baseline")
-    axis.set_title("Missingness-aware sensitivity analysis")
+    axis.set_xlabel("MAE difference: wellness-item-imputed full model − readiness-history baseline")
+    axis.set_title("Wellness-item-missingness sensitivity analysis")
     axis.spines[["top", "right"]].set_visible(False)
     figure.tight_layout()
     figure.savefig(figure_dir / "FigureS2_missingness_aware_incremental_value.pdf", bbox_inches="tight")
@@ -601,7 +601,7 @@ def main() -> None:
     plot_calibration_curves(predictions, figure_dir)
 
     audit = {
-        "analysis_version": "1.1.0",
+        "analysis_version": "1.1.1",
         "primary_cohort_n": int(len(primary)),
         "full_calendar_panel_n": int(len(full)),
         "missingness_aware_n": int(len(available)),
